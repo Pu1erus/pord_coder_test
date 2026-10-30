@@ -1,1 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+
+:root {
+  --color-cream: #faf6f1;
+  --color-warm-brown: #6b4423;
+  --color-light-brown: #a0785a;
+  --color-dark-brown: #3d2314;
+  --color-gold: #c8956c;
+  --color-sage: #8fa88b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Noto Serif SC', sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-dark-brown);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif-cn {
+  font-family: 'Noto Serif SC', serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-light-brown);
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Product card hover effect */
+.product-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(107, 68, 35, 0.12);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-image {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Overlay */
+.overlay {
+  background: rgba(61, 35, 20, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #6b4423, #c8956c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
